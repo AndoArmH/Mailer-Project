@@ -19,6 +19,7 @@ session_start();
     echo "$date";
     if($_SERVER['REQUEST_METHOD']== "POST")
     {
+        if(isset($_POST["email"]) && isset($_POST["message"]) && isset($_POST["timestamp"]) ){
         $userid = $_SESSION['Userid'];
         $email = $_POST['email'];
         $message = $_POST['message'];
@@ -43,6 +44,7 @@ session_start();
         }else{
             echo "Please enter all fields";
         }
+    }
     }
 
 ?>
